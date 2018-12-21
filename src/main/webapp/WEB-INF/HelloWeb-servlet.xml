@@ -14,4 +14,30 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations" value="classpath:/spring/settings_local.properties"/>
+    </bean>
+
+    <bean id="dataSource" class="io.hbsmith.RoutingDataSource">
+        <property name="targetDataSources">
+            <map key-type="io.hbsmith.DbType">
+                <entry key="MASTER" value-ref="dataSourceMaster"/>
+                <entry key="REPLICA" value-ref="dataSourceReplica"/>
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="dataSourceMaster"/>
+    </bean>
+
+    <bean id="dataSourceMaster" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${db.master.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+    <bean id="dataSourceReplica" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${db.replica.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
 </beans>
