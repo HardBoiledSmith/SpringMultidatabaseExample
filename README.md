@@ -25,4 +25,4 @@ Example for rate limit throttling in Spring MVC
 
 ## References
 
-https://github.com/mokies/ratelimitj/tree/master/ratelimitj-inmemory
+http://fedulov.website/2015/10/14/dynamic-datasource-routing-with-spring/
