@@ -26,4 +26,3 @@ Example for rate limit throttling in Spring MVC
 ## References
 
 https://github.com/mokies/ratelimitj/tree/master/ratelimitj-inmemory
-# SpringMultidatabaseExample
