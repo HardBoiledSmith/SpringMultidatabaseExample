@@ -1,6 +1,6 @@
 # SpringMultidatabaseExample
 
-Example for rate limit throttling in Spring MVC 
+Example for multi-database in Spring MVC 
 
 ## Required
 
